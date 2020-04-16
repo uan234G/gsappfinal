@@ -78,7 +78,7 @@
                     <label asp-for="Photo">Profile Pic * Max 2MB <span asp-validation-for="Photo" class="red"></span></label>
 
                     <div class="image-upload">
-                        <input asp-for="Photo" type="file" class="real-file" hidden="hidden">
+                        <input asp-for="Photo" type="file" onchange="ValidateSize(this)" class="real-file" hidden="hidden">
                         <button type="button" class="upload-btn">Choose file</button>
                         <p class="file-callout">No file selected</p>
                     </div>
