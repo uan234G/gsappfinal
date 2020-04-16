@@ -23,6 +23,17 @@
     </div>
 </header>
 
+<script>
+    function ValidateSize(file) {
+        var FileSize = file.files[0].size / 1024 / 1024; // in MB
+        if (FileSize > 2) {
+            alert('File size exceeds 2 MB');
+            $(file).val(''); //for clearing with Jquery
+        } else {
+        }
+    }
+</script>
+
 <section class="help-helper-main wrapper">
 
     <div class="explanation-card" data-aos="fade-right" data-aos-delay="700">
