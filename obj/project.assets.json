@@ -12155,11 +12155,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/daesungchoi/Documents/GitHub/gsappfinal/GSAPP.csproj",
+      "projectUniqueName": "/Users/daesungchoi/Documents/GitHub/GSAPP/GSAPP.csproj",
       "projectName": "GSAPP",
-      "projectPath": "/Users/daesungchoi/Documents/GitHub/gsappfinal/GSAPP.csproj",
+      "projectPath": "/Users/daesungchoi/Documents/GitHub/GSAPP/GSAPP.csproj",
       "packagesPath": "/Users/daesungchoi/.nuget/packages/",
-      "outputPath": "/Users/daesungchoi/Documents/GitHub/gsappfinal/obj/",
+      "outputPath": "/Users/daesungchoi/Documents/GitHub/GSAPP/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

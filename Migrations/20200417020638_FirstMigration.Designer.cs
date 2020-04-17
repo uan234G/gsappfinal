@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GSAPP.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20200408215339_firstMigration")]
-    partial class firstMigration
+    [Migration("20200417020638_FirstMigration")]
+    partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,7 +26,8 @@ namespace GSAPP.Migrations
 
                     b.Property<bool>("IsCompleted");
 
-                    b.Property<string>("Items");
+                    b.Property<string>("Items")
+                        .IsRequired();
 
                     b.Property<string>("Notes");
 
@@ -48,24 +49,11 @@ namespace GSAPP.Migrations
                     b.Property<int>("UserId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Address1")
-                        .IsRequired();
-
-                    b.Property<string>("Address2");
-
-                    b.Property<string>("City")
-                        .IsRequired();
-
-                    b.Property<string>("Country")
-                        .IsRequired();
-
                     b.Property<string>("Email")
                         .IsRequired();
 
                     b.Property<string>("FirstName")
                         .IsRequired();
-
-                    b.Property<string>("ImageUrl");
 
                     b.Property<string>("LastName")
                         .IsRequired();
@@ -74,9 +62,6 @@ namespace GSAPP.Migrations
                         .IsRequired();
 
                     b.Property<string>("PhoneNumber")
-                        .IsRequired();
-
-                    b.Property<string>("State")
                         .IsRequired();
 
                     b.Property<bool>("Status");
