@@ -4,50 +4,52 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Http;
 
-namespace GSAPP.Models {
-    public class User {
+namespace GSAPP.Models
+{
+    public class User
+    {
         [Key]
         public int UserId { get; set; }
 
-        [Required (ErrorMessage = "Name required")]
-        [MinLength (2, ErrorMessage = "Name should be more than 2 characters")]
+        [Required(ErrorMessage = "Name required")]
+        [MinLength(2, ErrorMessage = "Name should be more than 2 characters")]
         public string FirstName { get; set; }
 
-        [Required (ErrorMessage = "Last name required")]
-        [MinLength (2, ErrorMessage = "Last name should be more than 2 characters")]
+        [Required(ErrorMessage = "Last name required")]
+        [MinLength(2, ErrorMessage = "Last name should be more than 2 characters")]
         public string LastName { get; set; }
 
         [Required]
         public bool Status { get; set; }
         // upon registering you can choose Helper or Person in need of help??
         // true = needs help , false = helper
-        [Required (ErrorMessage = "Venmo ID required")]
+        [Required(ErrorMessage = "Venmo ID required")]
         public string VenmoId { get; set; }
 
-        // public string ImageUrl { get; set; }
+        public string ImageUrl { get; set; }
 
         // [NotMapped]
         // [Required(ErrorMessage = "Picture required")]
         // public IFormFile Photo { get; set; }
 
-        [Required (ErrorMessage = "Phone # required")]
+        [Required(ErrorMessage = "Phone # required")]
         public string PhoneNumber { get; set; }
 
-        [Required (ErrorMessage = "Email required")]
+        [Required(ErrorMessage = "Email required")]
         [EmailAddress]
-        [MinLength (4, ErrorMessage = "Email address should be more than 4 characters")]
-        [RegularExpression (@"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", ErrorMessage = "Please enter a valid email address")]
+        [MinLength(4, ErrorMessage = "Email address should be more than 4 characters")]
+        [RegularExpression(@"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", ErrorMessage = "Please enter a valid email address")]
         public string Email { get; set; }
 
-        [Required (ErrorMessage = "Password required")]
-        [DataType (DataType.Password)]
-        [MinLength (8, ErrorMessage = "Password must be at least 8 characters")]
+        [Required(ErrorMessage = "Password required")]
+        [DataType(DataType.Password)]
+        [MinLength(8, ErrorMessage = "Password must be at least 8 characters")]
         public string Password { get; set; }
 
         [NotMapped]
-        [Required (ErrorMessage = "Confirm password")]
-        [Compare ("Password", ErrorMessage = "Passwords don't match")]
-        [DataType (DataType.Password)]
+        [Required(ErrorMessage = "Confirm password")]
+        [Compare("Password", ErrorMessage = "Passwords don't match")]
+        [DataType(DataType.Password)]
         public string Confirm { get; set; }
 
         // [Required(ErrorMessage = "Address required")]
@@ -60,7 +62,7 @@ namespace GSAPP.Models {
         // [MinLength(2, ErrorMessage = "Name should be more than 2 characters")]
         // public string City { get; set; }
 
-        [Required (ErrorMessage = "Zip code required")]
+        [Required(ErrorMessage = "Zip code required")]
         public int ZipCode { get; set; }
 
         // [Required(ErrorMessage = "Country required")]
@@ -77,12 +79,13 @@ namespace GSAPP.Models {
 }
 
 [NotMapped]
-public class Login {
-    [Required (ErrorMessage = "Enter your email")]
+public class Login
+{
+    [Required(ErrorMessage = "Enter your email")]
     [EmailAddress]
     public string LoginEmail { get; set; }
 
-    [Required (ErrorMessage = "Enter your password")]
-    [DataType (DataType.Password)]
+    [Required(ErrorMessage = "Enter your password")]
+    [DataType(DataType.Password)]
     public string LoginPassword { get; set; }
 }
